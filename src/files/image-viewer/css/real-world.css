@@ -1,11 +1,15 @@
+#gallery {
+	margin: 20px 0;
+}
+
 .aui-image-viewer {
   height: auto;
   width: auto;
 }
 
-.aui-image-viewer-bd, .aui-image-viewer-image {	
-  height: auto !important;
-  width: auto !important;
+.aui-image-viewer-bd, .aui-image-viewer-image {
+  height: auto;
+  width: auto;
 }
 
 .gallery, .picture {
@@ -14,4 +18,6 @@
 
 .picture {
   border: 5px solid #222;
+  height: 200px;
+  width: 200px;
 }

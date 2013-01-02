@@ -1,23 +1,22 @@
 ---
-ignored: true
-title: Real World
+title: Media
 layout: single-example
-tags: ''
+tags: 'image-viewer'
 ---
 
 <link rel="stylesheet" href="<%= @site.url %>/image-viewer/css/real-world.css" type="text/css" />
 
-<h1>Image Viewer - Real World Sample</h1>
+<h1>Image Viewer - Media Example</h1>
 
-<div id="gallery1" class="gallery">
-	<a href="<%= @site.url %>/image-viewer/img/lfr-soccer-4.jpg" title="The real champion winners, Brazilian team!">
-		<img class="picture" src="<%= @site.url %>/image-viewer/img/lfr-soccer-4_tn.jpg" />
+<div id="gallery">
+	<a href="http://www.youtube.com/watch?v=dZn_VBgkPNY" title="Yo-Yo Ma plays Bach">
+		<img alt="Yo-Yo Ma plays Bach" class="picture" src="<%= @site.url %>/image-viewer/img/youtube.png">
 	</a>
-	<a href="<%= @site.url %>/image-viewer/img/lfr-soccer-5.jpg" title="">
-		<img class="picture" src="<%= @site.url %>/image-viewer/img/lfr-soccer-5_tn.jpg" />
+	<a data-options="width=400&height=300" href="http://vimeo.com/22439234" title="The Mountain (Vimeo movie)">
+		<img alt=The Mountain (Vimeo movie)" class="picture" src="<%= @site.url %>/image-viewer/img/vimeo.png">
 	</a>
-	<a href="<%= @site.url %>/image-viewer/img/lfr-soccer-6.jpg">
-		<img class="picture" src="<%= @site.url %>/image-viewer/img/lfr-soccer-6_tn.jpg" />
+	<a href="http://www.dailymotion.com/video/xdi011_op-nworks-presente-le-portail-d-ent_tech&width=480&height=270" title="Op'nWorks présente le portail d'entreprise Liferay">
+		<img alt="Op'nWorks presente le portail d'entreprise Liferay" class="picture" src="<%= @site.url %>/image-viewer/img/daily-motion.png">
 	</a>
 </div>
 
