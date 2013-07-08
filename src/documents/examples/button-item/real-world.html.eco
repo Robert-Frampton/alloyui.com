@@ -14,5 +14,5 @@ category: Button Item
 <%- @codeFile('real-world.js', 'javascript') %>
 
 <script>
-  <%- @readFile('real-world.js', 'javascript') %>
+	<%- @readFile('real-world.js', 'javascript') %>
 </script>

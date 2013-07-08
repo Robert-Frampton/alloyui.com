@@ -11,5 +11,5 @@ category: Dialog
 <%- @codeFile('buttons.js', 'javascript') %>
 
 <script>
-  <%- @readFile('buttons.js', 'javascript') %>
+	<%- @readFile('buttons.js', 'javascript') %>
 </script>
