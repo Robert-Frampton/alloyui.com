@@ -126,21 +126,6 @@ pre {
   position: relative;
 }
 
-/* Github Ribbon */
-
-.github-ribbon {
-  position: fixed;
-  top: 0;
-  right: 0;
-  border: 0;
-  z-index: 404;
-}
-
-
-@media only screen and (max-width: 1048px) {
-  .github-ribbon { display: none; }
-}
-
 /* Nav */
 
 .navbar {
