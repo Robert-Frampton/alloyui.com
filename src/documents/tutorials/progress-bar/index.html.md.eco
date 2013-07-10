@@ -8,10 +8,11 @@ description: Allows users to view loading progress in real time.
 
 #### Getting Started
 
-First load the seed file, if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
 ``` html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getCdnCss() %>" rel="stylesheet">
 ```
 
 Then initialize AlloyUI and load the Progress Bar module.
@@ -43,7 +44,7 @@ Now create a new instance of Progress Bar component, then tell to `boundingBox` 
 AUI().use(
   'aui-progressbar',
   function(A) {
-    new A.ProgressBar(
+    var progressBar = new A.ProgressBar(
       {
         boundingBox: '#myProgressBar',
         contentBox: '.bar',
@@ -69,12 +70,17 @@ There are some other options that you can pass to your Progress Bar instance.
 
 If you need to have Progress Bar load content from another file, you can set a callback function when the `complete` event fires that loads your content.  Be sure to tell AUI to use the Node-Load component as well.  You can even set a `label` which is changed when the `complete` event fires.
 
+``` html
+<div class="content"></div>
+```
+
 ``` javascript
 AUI().use(
   'aui-progressbar',
   'node-load',
   function(A) {
-    new A.ProgressBar(
+    var content = A.one('.content');
+    var progressBar = new A.ProgressBar(
       {
         boundingBox: '#myProgressBar',
         contentBox: '.bar',
@@ -83,7 +89,7 @@ AUI().use(
         on: {
           complete: function(event) {
             this.set('label', 'Complete!');
-            content.load('assets/content.html');
+            content.load('http://alloyui.com/versions/1.5.x/progress-bar/content.html');
           }
         }
       }
@@ -115,7 +121,8 @@ AUI().use(
   'node-load',
   'async-queue',
   function(A) {
-    new A.ProgressBar(
+    var content = A.one('.content');
+    var progressBar = new A.ProgressBar(
       {
         boundingBox: '#myProgressBar',
         contentBox: '.bar',
@@ -123,7 +130,7 @@ AUI().use(
         on: {
           complete: function(event) {
             this.set('label', 'Complete!');
-            content.load('assets/content.html');
+            content.load('http://alloyui.com/versions/1.5.x/progress-bar/content.html');
           }
         },
         value: '0'
