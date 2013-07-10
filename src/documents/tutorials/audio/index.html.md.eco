@@ -8,18 +8,22 @@ description: Creates an interactive audio player in HTML5 with fallback for old 
 
 #### Getting Started
 
-First load the seed file, if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
 ``` html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getCdnCss() %>" rel="stylesheet">
 ```
 
 Then initialize AlloyUI and load the Audio module.
 
 ``` javascript
-AUI().use('aui-audio', function(A) {
-  // code goes here
-});
+AUI().use(
+  'aui-audio',
+  function(A) {
+    // code goes here
+  }
+);
 ```
 ---
 
@@ -34,14 +38,17 @@ Create an HTML element.
 Set `boundingBox` to the newly created element, set `url` to your chosen audio file, and render it!
 
 ``` javascript
-AUI().use('aui-audio', function(A) {
-
-  new A.Audio({
-    boundingBox: '#myAudio',
-    url: 'http://alloyui.com/audio/zelda.mp3'
-  }).render();
-
-});
+AUI().use(
+  'aui-audio',
+  function(A) {
+    new A.Audio(
+      {
+        boundingBox: '#myAudio',
+        url: 'http://alloyui.com/audio/zelda.mp3'
+      }
+    ).render();
+  }
+);
 ```
 
 <div class="alert alert-success">

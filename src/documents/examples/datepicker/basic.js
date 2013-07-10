@@ -1,15 +1,23 @@
-AUI().use('aui-datepicker', function(A) {
+AUI().use(
+  'aui-datepicker',
+  function(A) {
+    new A.DatePickerSelect(
+      {
+        appendOrder: ['m', 'd', 'y'],
+        calendar: {
+          dates: ['10/10/2013']
+        }
+      }
+    ).render('#myDatePicker');
 
-  new A.DatePickerSelect({
-    appendOrder: [ 'm', 'd', 'y' ]
-  }).render('#myDatePicker');
-
-  new A.DatePicker({
-    trigger: '#myInput',
-    calendar: {
-      selectedDates: new Date,
-      dateFormat: '%m/%d/%Y'
-    }
-  }).render('#myOtherDatePicker');
-
-});
+    new A.DatePicker(
+      {
+        calendar: {
+          dateFormat: '%m/%d/%Y',
+          dates: ['10/10/2013']
+        },
+        trigger: '#myInput'
+      }
+    ).render('#myOtherDatePicker');
+  }
+);
