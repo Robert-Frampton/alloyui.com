@@ -1,7 +1,14 @@
 AUI().ready(
   'aui-textboxlist',
   function(A) {
-    var continents = ['America', 'Europe', 'Asia', 'Africa', 'Oceania', 'Antarctica'];
+    var continents = [
+      ['Africa'],
+      ['America'],
+      ['Antarctica'],
+      ['Asia'],
+      ['Oceania'],
+      ['Europe'],
+    ];
 
     new A.TextboxList(
       {
