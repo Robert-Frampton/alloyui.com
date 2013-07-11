@@ -61,6 +61,23 @@ AUI().use(
 );
 ```
 
+#### Using Image Gallery
+
+You can also use a very similar module called Image Gallery to navigate and possibly cycling through a collection of images. Just need to link those images in the HTML, and render it!
+
+``` javascript
+AUI().use(
+  'aui-image-viewer-gallery',
+  function(A) {
+    new A.ImageGallery(
+      {
+        links: '#myGallery a'
+      }
+    ).render();
+  }
+);
+```
+
 ---
 
 #### Configuring Image Viewer
@@ -73,12 +90,12 @@ AUI().use(
   function(A) {
     new A.ImageViewer(
       {
-        //captionFromTitle uses the DOM title attibute as image caption
+        // captionFromTitle uses the DOM title attibute as image caption
         captionFromTitle: true,
         centered: false,
         links: '#gallery a',
         preloadAllImages: true
-        //preloadNeighborImages: true,
+        // preloadNeighborImages: true
       }
     ).render();
   }

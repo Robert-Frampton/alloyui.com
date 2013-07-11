@@ -41,7 +41,7 @@ The most basic of tables require two kinds of information, table columns and dat
 AUI().use(
   'aui-datatable',
   function(A) {
-    var columns = [name, age];
+    var columns = ['name', 'age'];
 
     var data = [
       {name: 'Bob', age: '28'},
@@ -49,10 +49,10 @@ AUI().use(
       {name: 'Sarah', age: '35'}
     ];
 
-    new A.DataTable(
+    new A.DataTable.Base(
       {
-        columns: columns,
-        data: data
+        columnset: columns,
+        recordset: data
       }
     ).render('#myDataTable');
   }
@@ -68,15 +68,15 @@ A plugin can be utilized to allow the highlighting of table cells.
 AUI().use(
   'aui-datatable',
   function(A) {
-    new A.DataTable(
+    new A.DataTable.Base(
       {
-        columns: columns,
-        data: data,
+        columnset: columns,
         plugins: [
           {
             fn: A.Plugin.DataTableHighlight
           }
-        ]
+        ],
+        recordset: data
       }
     ).render('#myDataTable');
   }
@@ -100,10 +100,10 @@ AUI().use(
       }
     ];
 
-    new A.DataTable(
+    new A.DataTable.Base(
       {
-        columns: columns,
-        data: data
+        columnset: columns,
+        recordset: data
       }
     ).render('#myDataTable');
   }
@@ -132,10 +132,10 @@ AUI().use(
       }
     ];
 
-    new A.DataTable(
+    new A.DataTable.Base(
       {
-        columns: columns,
-        data: data
+        columnset: columns,
+        recordset: data
       }
     ).render('#myDataTable');
   }
