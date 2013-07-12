@@ -9,10 +9,11 @@ description: Allows users to set ratings for content.
 
 #### Getting Started
 
-First load the seed file if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
-``` html
+```html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getBootstrapCSS() %>" rel="stylesheet"></link>
 ```
 
 Then initialize AlloyUI and load the Rating module.
@@ -35,7 +36,7 @@ Create an HTML element:
 <div id="myRating"></div>
 ```
 
-Now create a new instance of Rating component by setting boundingBox to our HTML element's selector. We will leave all other options empty for a stock Rating configuration. Finally, let's render it!
+Now create a new instance of the Rating component by setting boundingBox to our HTML element's selector. We will leave all other options empty for a stock Rating configuration. Finally, let's render it!
 
 ``` javascript
 YUI().use(

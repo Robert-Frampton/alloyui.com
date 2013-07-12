@@ -9,10 +9,11 @@ description: Allows user to access scheduler widget with built-in calendar.
 
 #### Getting Started
 
-First load the seed file if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
-``` html
+```html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getBootstrapCSS() %>" rel="stylesheet"></link>
 ```
 
 Then initialize AlloyUI and load the Scheduler module.
@@ -40,7 +41,7 @@ Create an HTML element with a wrapper div:
   <strong>Note:</strong> using Scheduler without a "wrapper" `div` may produce undesirable results due to its styling within AlloyUI.  Try it with or without a wrapper to see how Scheduler works with surrounding elements.
 </div>
 
-Now create a new instance of Scheduler component.
+Now create a new instance of the Scheduler component.
 
 First, let's create an `events` variable where we stored our first calendar event, setting its name via `content` and a start and end date. Then we'll initialize the calendar view we're going to use, `weekView`.
 

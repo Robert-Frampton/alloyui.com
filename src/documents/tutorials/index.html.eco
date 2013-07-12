@@ -10,8 +10,10 @@ order: 1
 <h4>1. Copy and paste</h4>
 
 <pre><code class="html">&lt;script src="<%= @getCdnSeed() %>"&gt;&lt;/script&gt;</code></pre>
+<p>This is an ultra-small bit of JavaScript that enables you to load any AlloyUI modules on your page.</p>
 
-<p>This is an ultra-small bit of JavaScript that enables you to load any AlloyUI component on your page.</p>
+<pre><code class="html">&lt;link href="<%= @getBootstrapCSS() %>" rel="stylesheet"&gt;&lt;/link&gt;</code></pre>
+<p>And this is the base style for all components; it's a fork from the popular <a href="http://liferay.github.io/alloy-bootstrap/">Bootstrap</a> project with some minor additions.</p>
 
 <hr>
 
@@ -43,7 +45,7 @@ order: 1
 
 <h4>3. Using a UI component</h4>
 
-<p>Now let's take advantage of all the power that AlloyUI has and use <a href="<%= @getSiteUrl() %>/tutorials/carousel">Carousel</a>, one the UI components.</p>
+<p>Now let's take advantage of all the power that AlloyUI has and use <a href="<%= @getSiteUrl() %>/tutorials/carousel">Carousel</a>, one of the UI components.</p>
 
 <pre><code class="javascript">YUI().use(
   'aui-carousel',
@@ -73,4 +75,5 @@ order: 1
   <p style="text-align: center; margin-bottom: 25px;">Go ahead and navigate between other components using the list on the left.</p>
 </div>
 
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/carousel/css/basic.css" />
 <script src="<%= @getAssetsUrl() %>/js/tutorial-demo.js"></script>

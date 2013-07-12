@@ -34,11 +34,11 @@ module.exports = {
       url: 'http://alloyui.com',
 
       // Github branch
-      githubUrl: 'https://github.com/liferay/alloy-ui/',
+      githubUrl: 'https://github.com/liferay/alloy-ui/tree/2.0.x',
 
       // Basic info
       title: 'AlloyUI',
-      description: 'AlloyUI is a framework built on top of YUI3 that provides a simple API for building high scalable applications.'
+      description: 'AlloyUI is a framework built on top of YUI3 (JavaScript) that uses Bootstrap (HTML/CSS) to provide a simple API for building high scalable applications.'
     },
 
     /* -----------------------------
@@ -65,6 +65,11 @@ module.exports = {
     getPreparedDescription: function() {
       // if we have a document description, then we should use that, otherwise use the site's description
       return this.document.description || this.site.description;
+    },
+
+    // Get the Bootstrap CSS file for this Alloy version
+    getBootstrapCSS: function() {
+      return "" + this.alloy.cdnDomain + "/" + this.alloy.version + "/aui-css/css/bootstrap.min.css";
     },
 
     // Get the CDN path for this Alloy version

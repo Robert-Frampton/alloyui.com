@@ -9,10 +9,11 @@ description: Allows users to view file/folder structure in expandable tree view.
 
 #### Getting Started
 
-First load the seed file, if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
-``` html
+```html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getBootstrapCSS() %>" rel="stylesheet"></link>
 ```
 
 Then initialize AlloyUI and load the Tree View module.
@@ -35,7 +36,7 @@ Create a HTML element:
 <div id="myTreeView"></div>
 ```
 
-Now create a new instance of Tree View component, then initialize a variable `children` which will store an array of the child files and folders to be supplied to Tree View.  Then use the `new TreeView` constructor, passing our HTML element for `boundingBox` and our children variable for `children`. Finally, let's render it!
+Now create a new instance of the Tree View component, then initialize a variable `children` which will store an array of the child files and folders to be supplied to Tree View.  Then use the `new TreeView` constructor, passing our HTML element for `boundingBox` and our children variable for `children`. Finally, let's render it!
 
 ``` javascript
 YUI().use(
