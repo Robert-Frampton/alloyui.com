@@ -9,10 +9,11 @@ description: Provides a set of controls to navigate through paged data.
 
 #### Getting Started
 
-First load the seed file, if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
-``` html
+```html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getBootstrapCSS() %>" rel="stylesheet"></link>
 ```
 
 Then initialize AlloyUI and load the Pagination module.
@@ -129,6 +130,10 @@ So far we have shown how to initialize and configure the Pagination, but it stil
 These actions can take place within `changeRequest`, utilizing `event.state.page`, `event.state.rowsPerPage`, etc. Check out the examples for how these changes can be executed.
 
 Here is a very basic example of how a pagination may be used to change the content of a page.
+
+``` html
+<div class="content"></div>
+```
 
 ``` javascript
 YUI().use(
