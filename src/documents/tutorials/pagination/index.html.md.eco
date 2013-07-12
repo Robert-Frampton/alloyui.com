@@ -9,10 +9,11 @@ description: Provides a set of controls to navigate through paged data.
 
 #### Getting Started
 
-First load the seed file, if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
-``` html
+```html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getBootstrapCSS() %>" rel="stylesheet"></link>
 ```
 
 Then initialize AlloyUI and load the Pagination module.
@@ -134,7 +135,7 @@ Here is a very basic example of how a pagination may be used to change the conte
 YUI().use(
   'aui-pagination',
   function(Y) {
-    //grabbing a node to be used for content
+    // Grabbing a node to be used for content
     var content = Y.one('.content');
 
     new Y.Pagination(
@@ -146,7 +147,7 @@ YUI().use(
 
             this.setState(newState);
 
-            //setting the content of the node to the current page number
+            // Setting the content of the node to the current page number
             content.html(event.state.page);
           }
         },

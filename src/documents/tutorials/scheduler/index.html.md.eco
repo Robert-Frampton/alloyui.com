@@ -9,10 +9,11 @@ description: Allows user to access scheduler widget with built-in calendar.
 
 #### Getting Started
 
-First load the seed file if you haven't yet.
+First load the seed and CSS files, if you haven't yet.
 
-``` html
+```html
 <script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getBootstrapCSS() %>" rel="stylesheet"></link>
 ```
 
 Then initialize AlloyUI and load the Scheduler module.
@@ -166,7 +167,7 @@ YUI().use(
         startDate: new Date(2013, 3, 25, 1)
       },
       {
-        color: "#8d8",
+        color: "#8D8",
         content: 'Earth Day Lunch',
         disabled: true,
         endDate: new Date(2013, 3, 22, 13),
