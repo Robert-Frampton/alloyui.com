@@ -1,0 +1,26 @@
+---
+title: Basic Example
+layout: single-example
+slug: 'delayed-task'
+tags: 'delayed-task'
+category: Delayed Task
+description: Controls the timing of effects enacted on a node.
+index: true
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/delayed-task/css/basic.css" />
+
+<h4>Hover over the box below and see what happens...</h4>
+
+
+<%- @readFile('basic-markup.html', 'html') %>
+
+<p>The color of the box changes immediately. However, when you mouseout, there's a delay before the color changes back to normal. Further, any time until the color changes back to normal, you can move your mouse back over the box and it will prevent the color change from happening.</p>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>

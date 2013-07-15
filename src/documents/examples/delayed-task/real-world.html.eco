@@ -1,0 +1,22 @@
+---
+title: Real World Example
+layout: single-example
+slug: 'delayed-task'
+tags: 'delayed-task'
+category: Delayed Task
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/delayed-task/css/real-world.css" />
+
+<%- @readFile('real-world-markup.html', 'html') %>
+
+<p class="aui-form-hint">
+	<span>Type a long number here, and the validation will only happen once you stop typing for a small period of time.</span>
+</p>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>

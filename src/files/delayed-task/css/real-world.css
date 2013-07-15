@@ -1,0 +1,13 @@
+label {
+	display: inline;
+}
+
+#wrapper {
+	padding: 10px;
+}
+
+.aui-icon-button {
+	display: inline-block;
+	float: none;
+	vertical-align: middle;
+}
