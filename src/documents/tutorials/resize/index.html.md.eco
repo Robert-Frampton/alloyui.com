@@ -1,0 +1,146 @@
+---
+layout: single-doc
+title: Resize
+tags: 'resize'
+category: Resize
+description: Allows users to create and define resizing properties.
+---
+
+#### Getting Started
+
+First load the seed file if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getCdnCss() %>" rel="stylesheet">
+```
+
+Then initialize AlloyUI and load the Resize module.
+
+``` javascript
+AUI().use(
+  'aui-resize',
+  function(A) {
+    // code goes here
+  }
+);
+```
+---
+
+#### Using Resize
+
+Create an HTML element to be resized. In this case, we'll use one of the images from the Carousel module:
+
+``` html
+<div id="myResize">
+    <img src="http://alloyui.com/carousel/img/1.jpg" id="myImage" />
+</div>
+```
+
+Now create a new instance of Resize component by setting `node` to our HTML element's selector, and specifiy whether or not you want to have the Resize module resize a `proxy` element or a real one. We will leave all other options empty for a stock Resizing configuration. Finally, let's render it!
+
+``` javascript
+AUI().use(
+  'aui-resize',
+  function(A) {
+    new A.Resize(
+      {
+        node: '#myImage',
+        proxy: true
+      }
+    ).render();
+  }
+);
+```
+
+#### Configuring Resize
+
+There are some other optional parameters that you can pass to your Resize instance.
+
+For example, you can pass the `handles` option values to specify which resize handles should be available to use:
+
+``` javascript
+AUI().use(
+  'aui-resize',
+  function(A) {
+    new A.Resize(
+      {
+        handles: 'bl, br, b , r',
+        // All options include 't, tr, r, br, b, bl, l, tl', where 't' is top, 'tr' is top right, and so on.
+        node: '#myImage',
+        proxy: true
+      }
+    ).render();
+  }
+);
+```
+
+You can also define a minimum height and width through the `defMinHeight` and `defMinWidth` attributes.
+
+``` javascript
+AUI().use(
+  'aui-resize',
+  function(A) {
+    new A.Resize(
+      {
+        defMinHeight: 150,
+        defMinWidth: 200,
+        handles: 'bl, br, b , r',
+        node: '#myImage',
+        proxy: true
+      }
+    ).render();
+  }
+);
+```
+
+#### Fun with Plugins
+
+You can constrain one element to a container by using the `ResizeConstrained` plugin. Likewise, you can also set Resize to only resize based on the proportions of a selected object. You can do this by setting the `preserveRatio` value to `true`. Just be sure to assign the correct element to the correct function!
+
+First, let's add some values to the container of the object to be resized.
+
+``` html
+<div id="myContainer">
+    <img src="http://alloyui.com/carousel/img/1.jpg" id="myImage" />
+
+  <style media="screen" type="text/css">
+
+    #myContainer {
+        border: 1px solid #ccc;
+        height: 250;
+        position: absolute;
+        width: 700px;
+    }
+
+  </style>
+</div>
+```
+
+If setting a minimum height and width (especially with images) it is helpful to keep these values in proprtion with the original image.
+
+``` javascript
+AUI().use(
+  'aui-resize',
+  function(A) {
+    var resize = new A.Resize(
+      {
+        node: '#myImage',
+        proxy: true
+      }
+    );
+
+    resize.plug(A.Plugin.ResizeConstrained, {
+        constrain: '#myContainer',
+        minHeight: 25,
+        minWidth: 70,
+        preserveRatio: true
+      }
+    ).render();
+  }
+);
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
