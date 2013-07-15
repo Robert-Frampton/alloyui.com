@@ -1,0 +1,86 @@
+---
+layout: single-doc
+title: Delayed Task
+tags: 'delayed-task'
+category: Delayed Task
+description: Controls the timing of effects enacted on a node.
+---
+
+#### Getting Started
+
+First load the seed file if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Delayed Task module.
+
+``` javascript
+AUI().use(
+  'aui-base',
+  'aui-delayed-task',
+  function(A) {
+    // code goes here
+  }
+);
+```
+---
+
+#### Using Delayed Task
+
+Create an HTML element:
+
+``` html
+<div id="myDelayedTask"></div>
+```
+
+Now we grab the ID of the node we wish to use the Delayed Task component on by using `A.one()`. We then create two variables, `mouseoverTask` and `mouseoutTask`, which each use instances of the Delayed Task component to control the timing of the application of the `aui-myDelayedTask-hover` CSS class. After creating the `mouseoverTask` and `mouseoutTask` variables to handle the styling, we then specify the timing of the effects in the last two blocks of code with `.cancel()` and `.delay()`. `.cancel()` is used to cancel the style that doesn't correspond to the current hover state (mouseover/mouseout). The parameters passed into `.delay()` are in milliseconds and can be customized to fit our timing preferences for both the mouseover and mouseout effects. If no parameter is specified, there is no delay in the effect (To see this code in action, take a look at the [basic example](http://alloyui.com/versions/1.0.x/examples/delayed-task/))
+
+``` javascript
+AUI().use(
+  'aui-base',
+  'aui-delayed-task',
+  function(A) {
+    var exampleNode = A.one('#myDelayedTask');
+
+    var mouseoverTask = new A.DelayedTask(
+      function() {
+        this.addClass('aui-myDelayedTask-hover');
+      },
+      exampleNode
+    );
+
+    var mouseoutTask = new A.DelayedTask(
+      function() {
+        this.removeClass('aui-myDelayedTask-hover');
+      },
+      exampleNode
+    );
+
+    exampleNode.on(
+      'mouseover',
+      function(event) {
+        mouseoutTask.cancel();
+        mouseoverTask.delay();
+      }
+    );
+
+    exampleNode.on(
+      'mouseout',
+      function(event) {
+        mouseoverTask.cancel();
+        mouseoutTask.delay(1000);
+      }
+    );
+  }
+);
+```
+
+<div class="alert alert-info">
+  <strong>Note:</strong> The Delayed Task component is helpful for <em>timing</em> effects and the application of certain styles, not for creating the actual styles themselves. Therefore, you'll likely want to create a CSS class that can be applied according the the timing functionality offered through the Delayed Task component (In this case we created a CSS class called `aui-myDelayedTask-hover` in a separate CSS file).
+</div>
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
