@@ -1,0 +1,20 @@
+---
+title: Real World Example
+layout: single-example
+slug: 'resize'
+tags: 'resize'
+category: Resize
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/resize/css/real-world.css" />
+
+<h4>A fixed-proportion, resizable image within a defined container:</h4>
+
+<%- @readFile('real-world-markup.html', 'html') %>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>
