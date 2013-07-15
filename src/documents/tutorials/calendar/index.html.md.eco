@@ -1,0 +1,120 @@
+---
+layout: single-doc
+title: Calendar
+tags: 'calendar'
+category: Calendar
+description: Create a graphical calendar that enables readers to choose one or more dates.
+---
+
+#### Getting Started
+
+First load the seed files if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getCdnCss() %>" rel="stylesheet">
+```
+
+Then initialize AlloyUI and load the Calendar module.
+
+``` javascript
+AUI().use(
+  'calendar',
+  function(A) {
+    // code goes here
+  }
+);
+```
+---
+
+#### Using Calendar
+
+The Calendar component is a UI control that enables users to choose one or more dates from a graphical calendar presented in a single month or multi-month interface. Calendars are generated entirely via script and can be navigated without any page refreshes:
+
+Create a new instance of Calendar and render it!
+
+``` javascript
+AUI().use(
+  'aui-calendar',
+  function(A) {
+    new A.Calendar().render();
+  }
+);
+```
+
+---
+
+#### Configuring Calendar
+
+Parameters can be passed into your instance of Calendar to change attibutes such as pre-selected dates, date format, establishing a first day of the week, and whether or not to show other months.
+
+``` javascript
+AUI().use(
+  'aui-calendar',
+  function(A) {
+    new A.Calendar(
+      {
+        dateFormat: '%d/%m/%y %A',
+        dates: [ '09/14/2013', '09/15/2013' ],
+        firstDayOfWeek: 1,
+        showOtherMonth: false
+      }
+    ).render();
+  }
+);
+```
+
+Further configuration includes declaring a range of available dates, selecting single or multiple dates, and allowing the use of the `None` and `Today` buttons.
+
+<div class="alert alert-info">
+  <strong>Note:</strong> when `date` isn't specified, Calendar will default to the date established by the machine running the process.
+</div>
+
+``` javascript
+AUI().use(
+  'aui-calendar',
+  function(A) {
+    new A.Calendar(
+      {
+        allowNone: false,
+        dateFormat: '%d/%m/%y %A',
+        dates: [ '09/14/2013', '09/15/2013' ],
+        firstDayOfWeek: 1,
+        maxDate: '09/25/2013',
+        minDate: '09/05/2013',
+        showOtherMonth: false,
+        showToday: false
+      }
+    ).render();
+  }
+);
+```
+
+---
+
+### Markup
+
+The Calendar module can also be configured from HTML markup. The first step is to create a HTML element.
+
+``` html
+<div id="myCalendar" class="aui-calendar-content"></div>
+```
+Then, simply create an instance of Calendar and specify the `boundingBox` and `srcNodes`.
+
+``` javascript
+AUI().use(
+  'aui-calendar',
+  function(A) {
+    new A.Calendar(
+      {
+        boundingBox: '#myCalendar',
+        srcNode: '#myCalendar .aui-calendar-content'
+      }
+    ).render();
+  }
+);
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>

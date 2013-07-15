@@ -1,0 +1,20 @@
+---
+title: Markup Example
+layout: single-example
+slug: 'calendar'
+tags: 'calendar'
+category: Calendar
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/calendar/css/real-world.css" />
+
+<p class="calendarTitle">Calendar made from markup:</p>
+
+<%- @readFile('real-world-markup.html', 'html') %>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>
