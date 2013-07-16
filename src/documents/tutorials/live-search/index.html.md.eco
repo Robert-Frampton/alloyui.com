@@ -1,0 +1,99 @@
+---
+layout: single-doc
+title: Live Search
+tags: 'Live Search'
+category: Live Search
+description: Provides a real-time search through designated content.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the Live Search module.
+
+``` javascript
+AUI().use(
+  'aui-live-search',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Live Search
+
+Create a list of elements that you want to search, as well as an input textbox:
+
+``` html
+<div class="list" id="search1">
+  <div class="entry-query">
+    <input class="query" type="text" name="query1" id="query1" />
+  </div>
+
+  <div class="entry" id='a'>
+    These
+  </div>
+  <div class="entry" id='b'>
+    entries
+  </div>
+    <div class="entry" id='c'>
+    are
+  </div>
+    <div class="entry" id='d'>
+    searchable
+  </div>
+</div>
+```
+
+Now create a new instance of Live Search component, then tell `input` which selector identifies the textbox that takes search queries and tell `nodes` what elements to search.
+
+``` javascript
+AUI().use(
+  'aui-live-search',
+  function(A) {
+    var liveSearch = new A.LiveSearch(
+      {
+        input: '#query1',
+        nodes: '#search1 .entry'
+      }
+    ).render();
+  }
+);
+
+```
+
+---
+
+#### Configuring Live Search
+
+The index by which elements are searched can be designated in the `data` attribute.
+
+For example, you can choose to search by id by setting the `data` attribute as shown below.
+
+``` javascript
+AUI().use(
+  'aui-live-search',
+  function(A) {
+    var liveSearch = new A.LiveSearch(
+      {
+        data: function(node) {
+          return node.attr('id');
+        },
+        input: '#query1',
+        nodes: '#search1 .entry',
+      }
+    );
+  }
+);
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
