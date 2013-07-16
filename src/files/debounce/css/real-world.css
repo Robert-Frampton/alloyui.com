@@ -1,0 +1,13 @@
+#example {
+    background: ;
+   	border: 1px solid #333;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+}
+
+#example.aui-demo-hover {
+    background-color: #0088CC;
+    border-color: #FC0;
+    color: #FFF;
+}
