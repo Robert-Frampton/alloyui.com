@@ -123,6 +123,31 @@ AUI().use(
 );
 ```
 
+---
+
+#### Using Dialog IFrame
+
+You can also use the Dialog iframe plugin for this module to add an iframe to your dialog. The page displayed in the iframe can be a website (or your own web content referenced by a relative path) designated by the `uri` attribute.
+
+``` javascript
+AUI().use(
+  'aui-dialog',
+  'aui-dialog-iframe',
+  function(A) {
+    window.myDialog = new A.Dialog(
+      {
+        title: 'Dialog Title'
+      }
+    ).plug(
+      A.Plugin.DialogIframe,
+      {
+        uri: 'http://liferay.com'
+      }
+    ).render();
+  }
+);
+```
+
 <div class="alert alert-success">
   For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
 </div>
