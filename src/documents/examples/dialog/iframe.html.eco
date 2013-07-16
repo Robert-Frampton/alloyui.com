@@ -1,0 +1,15 @@
+---
+title: Iframe Example
+layout: single-example
+slug: 'dialog'
+tags: 'dialog'
+category: Dialog
+---
+
+<p>You should see an iframe here.</p>
+
+<%- @codeFile('iframe.js', 'javascript') %>
+
+<script>
+  <%- @readFile('iframe.js', 'javascript') %>
+</script>
