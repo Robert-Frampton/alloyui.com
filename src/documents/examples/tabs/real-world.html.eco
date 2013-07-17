@@ -1,0 +1,20 @@
+---
+title: Markup Example
+layout: single-example
+slug: 'tabs'
+tags: 'tabs'
+category: Tabs
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/tabs/css/real-world.css" />
+
+<h5>Tabs made from markup:</h5>
+
+<%- @readFile('real-world-markup.html', 'html') %>
+
+<%- @codeFile('real-world-markup.html', 'html') %>
+<%- @codeFile('real-world.js', 'javascript') %>
+
+<script>
+  <%- @readFile('real-world.js', 'javascript') %>
+</script>

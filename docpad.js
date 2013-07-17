@@ -75,6 +75,12 @@ module.exports = {
       return "" + this.alloy.cdnDomain + "/" + this.alloy.version + "/aui/aui-min.js";
     },
 
+    // Get the CSS seed file for this Alloy version
+    getCdnCss: function() {
+      return "" + this.alloy.cdnDomain + "/" + this.alloy.version + "/aui-skin-classic/css/aui-skin-classic-all-min.css";
+    },
+
+
     // Get the download URL for this Alloy version
     getDownloadUrl: function() {
       return "" + this.alloy.cdnDomain + "/downloads/alloy-" + this.alloy.version + ".zip";

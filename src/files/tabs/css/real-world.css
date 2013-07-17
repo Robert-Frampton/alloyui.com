@@ -1,0 +1,16 @@
+#add, #disable, #remove {
+	margin-right: 2px;
+	padding: 2px;
+}
+
+.aui-tabview-content {
+	margin-bottom: 5px;
+}
+
+.aui-tabview-content .aui-widget-bd h5 {
+	margin-bottom: -5px;
+}
+
+.aui-tabview-list {
+	margin-top: 5px;
+}

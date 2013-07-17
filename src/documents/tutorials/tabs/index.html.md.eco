@@ -1,0 +1,111 @@
+---
+layout: single-doc
+title: Tabs
+tags: 'tabs'
+category: Tabs
+description: Allows users to create and manage tabs that can be used in conjunction with TabView.
+---
+
+#### Getting Started
+
+First load the seed files if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getCdnCss() %>" rel="stylesheet">
+```
+
+Then initialize AlloyUI and load the Tabs module.
+
+``` javascript
+AUI().use(
+    'aui-tabs',
+    function(A) {
+        // code goes here
+    }
+);
+```
+---
+
+#### Using Tabs
+
+First, create an HTML element:
+
+``` html
+<div id="exampleTabs"></div>
+```
+
+Now create a new instance of Tabs. Start by tellling `boundingBox` where it's going to be attatched.
+
+``` javascript
+AUI().use(
+  'aui-tabs',
+  function(A) {
+    new A.TabView(
+      {
+        boundingBox: '#exampleTabs',
+        // code for individual tabs goes here
+      }
+    );
+  }
+);
+```
+---
+
+#### Configuring Tabs
+
+Next, we'll populate the `items` array. This will be used to define the individual tabs, although there are ways to do this through HTML markup (see Real World Example and `contentNode`).
+
+``` javascript
+AUI().use(
+  'aui-tabs',
+  function(A) {
+    new A.TabView(
+      {
+        boundingBox: '#exampleTabs',
+        items: [
+          {label: 'Tab 1', content: 'Give me a T!'},
+          {label: 'Tab 2', content: 'Give me a A!'},
+          {label: 'Tab 3', content: 'Give me a B!'},
+          {label: 'Tab 4', content: 'Give me a S!'},
+          {label: 'Tab 5', content: 'It's tabs!'}
+        ]
+      }
+    ).render();
+  }
+);
+```
+Specify `contentBox` or `contentNode` to create default content for your tabs.
+
+``` html
+<div id="exampleTabs">
+    <div id="exampleContent">
+        <p>These are my tabs.</p>
+    </div>
+</div>
+```
+
+``` javascript
+AUI().use(
+  'aui-tabs',
+  function(A) {
+    new A.TabView(
+      {
+        boundingBox: '#exampleTabs',
+        contentBox: '#exampleContent',
+        items: [
+          {label: 'Tab 1', content: 'Give me a T!'},
+          {label: 'Tab 2', content: 'Give me a A!'},
+          {label: 'Tab 3', content: 'Give me a B!'},
+          {label: 'Tab 4', content: 'Give me a S!'},
+          {label: 'Tab 5', content: 'It's tabs!'}
+        ]
+      }
+    ).render();
+  }
+);
+```
+
+<div class="alert alert-success">
+    For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
