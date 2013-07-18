@@ -1,0 +1,24 @@
+.aui-loadingmask-message-content {
+	background: #fff url(../images/loading_indicator.gif) no-repeat 5px 50%;
+}
+
+#exampleArea {
+	height: 270px;
+}
+
+#exampleText {
+	border: 1px solid #C0C0C0;
+	margin-top: 10px;
+	padding-left: 2px;
+}
+
+#toggleMask {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 3px;
+	text-decoration: none;
+}
+
+p {
+	margin-top: 5px;
+}
