@@ -1,0 +1,18 @@
+---
+title: Basic Example
+layout: single-example
+slug: 'editable'
+tags: 'editable'
+category: Editable
+description: Provides a designated area for text to be edited on a web page.
+index: true
+---
+
+<%- @readFile('basic-markup.html', 'html') %>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>
