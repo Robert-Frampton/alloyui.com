@@ -1,0 +1,78 @@
+---
+layout: single-doc
+title: Editable
+tags: 'editable'
+category: Editable
+description: Provides a designated area for text to be edited on a web page.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+<link href="<%= @getCssSeed() %>" rel="stylesheet">
+```
+
+Then initialize AlloyUI and load the Editable module.
+
+``` javascript
+AUI().use(
+  'aui-editable',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Editable
+
+Make a div where the editable area will go. You can also initialize it with some text.
+
+``` html
+<div id='editor'>
+  I am editable.
+</div>
+```
+
+Create an instance of Editable and use the `node` attribute to specify in which element the editor will be located.
+
+``` javascript
+AUI().use(
+  'aui-editable',
+  function(A) {
+    new A.Editable(
+      {
+        node: '#editor'
+      }
+    );
+  }
+);
+```
+
+---
+
+#### Configuring Editor
+
+You can change the input type of the editable area by specifying the type of input in the `inputType` attribute.
+
+``` javascript
+AUI().use(
+  'aui-editable',
+  function(A) {
+    new A.Editable(
+      {
+        inputType: 'textarea',
+        node: '#editor'
+      }
+    );
+  }
+);
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
