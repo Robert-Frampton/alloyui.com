@@ -1,0 +1,22 @@
+---
+title: Basic Example
+layout: single-example
+slug: 'loading-mask'
+tags: 'loading-mask'
+category: LoadingMask
+description: Cross-browser mask functionality to cover an element or the entire page.
+index: true
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/loading-mask/css/basic.css" />
+
+<h5>Click to toggle LoadingMask:</h5>
+
+<p><%- @readFile('basic-markup.html', 'html') %></p>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>
