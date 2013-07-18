@@ -93,7 +93,6 @@ AUI().use(
   function(A) {
     new A.FormBuilder(
       {
-        boundingBox: '#myFormBuilder',
         availableFields: [
           {
             iconClass: 'aui-form-builder-field-icon-text',
@@ -103,7 +102,8 @@ AUI().use(
             unique: true,
             width: 100
           }
-        ]
+        ],
+        boundingBox: '#myFormBuilder'
       }
     ).render();
   }
@@ -120,13 +120,13 @@ AUI().use(
     new A.FormBuilder(
       {
         boundingBox: '#myFormBuilder',
-        fields: {
+        fields: [
           {
             label: 'City',
             predefinedValue: 'Chicago',
             type: 'text'
           }
-        }
+        ]
       }
     ).render();
   }

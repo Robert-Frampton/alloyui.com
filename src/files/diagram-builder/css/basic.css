@@ -10,6 +10,10 @@
 	z-index: 2;
 }
 
+.aui-diagram-node {
+	z-index: 1000 !important;
+}
+
 .yui3-datatable-x-scroller {
 	border: 1px solid #CBCBCB;
 }
