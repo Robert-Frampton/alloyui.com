@@ -14,7 +14,7 @@ First load the seed file, if you haven't yet.
 <script src="<%= @getCdnSeed() %>"></script>
 ```
 
-Then initialize AlloyUI and load the AutoComplete module.
+Then initialize AlloyUI and load the Tooltip module.
 
 ``` javascript
 AUI().use(
