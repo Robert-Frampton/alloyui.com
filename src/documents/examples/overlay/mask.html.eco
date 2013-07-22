@@ -1,0 +1,20 @@
+---
+title: Overlay Mask Example
+layout: single-example
+slug: 'overlay'
+tags: 'overlay'
+category: Overlay
+description: A sub-base of Overlay providing Widget Lifecycle, cross-browser mask functionality, and customizability.
+index: true
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/overlay/css/mask.css" />
+
+<%- @readFile('mask-markup.html', 'html') %>
+
+<%- @codeFile('mask-markup.html', 'html') %>
+<%- @codeFile('mask.js', 'javascript') %>
+
+<script>
+  <%- @readFile('mask.js', 'javascript') %>
+</script>

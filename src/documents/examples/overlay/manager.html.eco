@@ -1,0 +1,20 @@
+---
+title: Overlay Manager Example
+layout: single-example
+slug: 'overlay'
+tags: 'overlay'
+category: Overlay
+description: All.
+index: true
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/overlay/css/manager.css" />
+
+<%- @readFile('manager-markup.html', 'html') %>
+
+<%- @codeFile('manager-markup.html', 'html') %>
+<%- @codeFile('manager.js', 'javascript') %>
+
+<script>
+  <%- @readFile('manager.js', 'javascript') %>
+</script>

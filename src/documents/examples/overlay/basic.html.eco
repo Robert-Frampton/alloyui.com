@@ -1,0 +1,18 @@
+---
+title: Overlay Context Example
+layout: single-example
+slug: 'overlay'
+tags: 'overlay'
+category: Overlay
+---
+
+<link rel="stylesheet" href="<%= @getSiteUrl() %>/overlay/css/context.css" type="text/css" />
+
+<%- @readFile('basic-markup.html', 'html') %>
+
+<%- @codeFile('basic-markup.html', 'html') %>
+<%- @codeFile('basic.js', 'javascript') %>
+
+<script>
+  <%- @readFile('basic.js', 'javascript') %>
+</script>

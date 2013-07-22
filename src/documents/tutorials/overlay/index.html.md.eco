@@ -1,0 +1,92 @@
+---
+layout: single-doc
+title: Overlay
+tags: 'overlay'
+category: Overlay
+description: Provides a flexible way of overlaying HTML elements.
+---
+
+#### Getting Started
+
+First load the seed file, if you haven't yet.
+
+``` html
+<script src="<%= @getCdnSeed() %>"></script>
+```
+
+Then initialize AlloyUI and load the appropriate Overlay module, such as aui-overlay-mask, aui-overlay-context, or aui-overlay-context-panel.
+
+``` javascript
+AUI().use(
+  'aui-overlay-base',
+  function(A) {
+    // code goes here
+  }
+);
+```
+
+---
+
+#### Using Overlay
+
+Create an HTML element to house the overlay and another element to act as the overlay.
+
+``` html
+<div id="outer">Mouse over here.
+  <div id="overlay">This is an overlay!</div>
+</div>
+```
+
+Also, we'll need to give the div elements styling for this to function correctly.
+
+``` css
+#outer {
+  border: dotted red;
+  font-size: 20px;
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+  width: 300px;
+}
+
+#overlay {
+  background-color: #08C;
+  height: 300px;
+  line-height: 300px;
+  margin: 2px;
+  width: 300px;
+}
+```
+
+Now create an instance of the Overlay component. You'll need to initialize some of the attributes: the `contentBox` attribute specifies which element will act as the overlay, the `srcNode` designates which element the overlay covers, and `visible` sets the initial visibility of the overlay...
+
+``` javascript
+AUI().use(
+  'aui-overlay-base',
+  function(A) {
+    var overlay = new A.OverlayBase(
+      {
+        contentBox: '#overlay',
+        srcNode: '#outer',
+        visible: false
+      }
+    ).render();
+    A.one('#outer').on(
+      'mouseover',
+      function() {
+        overlay.show();
+      } 
+    );
+    A.one('#outer').on(
+      'mouseout',
+      function() {
+        overlay.hide();
+      }
+    );
+  }
+);
+```
+
+<div class="alert alert-success">
+  For more information about configuration, check out our <a href="<%= @getSiteUrl() %>/api/">API Docs</a>.
+</div>
